@@ -505,9 +505,7 @@ function startDraw() {
 }
 
 function flipCircle(el) {
-  if (el.classList.contains('flipped')) return;
-  el.classList.add('flipped');
-  const idx = Array.from(el.parentNode.children).indexOf(el);
+  if (!el.classList.contains('flipped')) el.classList.add('flipped');
   const card = el._cardData;
   if (card) showPopup(card);
 }
