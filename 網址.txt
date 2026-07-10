@@ -1,0 +1,8 @@
+--- GitHub ---
+https://github.com/jeff79213-baba/fortune-opportunity
+
+--- GitHub Pages ---
+https://jeff79213-baba.github.io/fortune-opportunity/
+
+--- 本地路徑 ---
+C:\Users\TW-10\Documents\firebase雲端資料夾\機會命運
