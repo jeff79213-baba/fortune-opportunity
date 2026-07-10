@@ -24,13 +24,11 @@ h1{text-align:center;font-size:2.4em;margin-bottom:6px;background:linear-gradien
 .btn-success{background:linear-gradient(135deg,#2ed573,#17a553);color:#fff}.btn-success:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(46,213,115,.4)}
 .btn-info{background:linear-gradient(135deg,#5f27cd,#341f97);color:#fff}.btn-info:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(95,39,205,.4)}
 .btn-sm{padding:6px 14px;font-size:.82em}
-.btn-outline{background:transparent;border:1px solid rgba(255,255,255,.2);color:#ccc}.btn-outline:hover{border-color:#ffd700;color:#ffd700}
 
 /* ===== 卡片組列表 ===== */
 .set-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:30px}
 .set-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px;transition:all .3s;cursor:pointer}
 .set-item:hover{transform:translateY(-3px);border-color:rgba(255,215,0,.3);box-shadow:0 8px 25px rgba(0,0,0,.3)}
-.set-item.selected{border-color:#ffd700;background:rgba(255,215,0,.08)}
 .set-item .set-name{font-size:1.15em;font-weight:bold;margin-bottom:6px}
 .set-item .set-info{font-size:.85em;color:#aaa;margin-bottom:12px}
 .set-item .set-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
@@ -59,51 +57,49 @@ h1{text-align:center;font-size:2.4em;margin-bottom:6px;background:linear-gradien
 .breadcrumb a:hover{text-decoration:underline}
 
 /* ===== 抽卡頁 ===== */
-.draw-controls{text-align:center;margin-bottom:30px}
-.draw-controls h2{color:#ffd700;margin-bottom:16px;font-size:1.5em}
-.count-selector{display:flex;gap:10px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
-.count-btn{width:60px;height:60px;border-radius:50%;border:2px solid rgba(255,215,0,.3);background:rgba(255,215,0,.08);color:#ffd700;font-size:1.3em;font-weight:bold;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center}
+.draw-controls{text-align:center;margin-bottom:20px}
+.draw-controls h2{color:#ffd700;margin-bottom:14px;font-size:1.4em}
+.count-selector{display:flex;gap:10px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+.count-btn{width:58px;height:58px;border-radius:50%;border:2px solid rgba(255,215,0,.3);background:rgba(255,215,0,.08);color:#ffd700;font-size:1.3em;font-weight:bold;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center}
 .count-btn:hover,.count-btn.active{background:rgba(255,215,0,.25);border-color:#ffd700;transform:scale(1.1);box-shadow:0 0 20px rgba(255,215,0,.3)}
 .count-btn:disabled{opacity:.3;cursor:not-allowed;transform:none}
-.draw-btn{padding:16px 60px;font-size:1.3em;border-radius:50px;background:linear-gradient(135deg,#ffd700,#ff6b35);color:#1a1a2e;border:none;cursor:pointer;font-weight:bold;letter-spacing:3px;transition:all .3s;position:relative;overflow:hidden}
+.draw-btn{padding:14px 50px;font-size:1.2em;border-radius:50px;background:linear-gradient(135deg,#ffd700,#ff6b35);color:#1a1a2e;border:none;cursor:pointer;font-weight:bold;letter-spacing:3px;transition:all .3s;position:relative;overflow:hidden}
 .draw-btn:hover{transform:scale(1.05);box-shadow:0 0 40px rgba(255,215,0,.5)}
-.draw-btn:active{transform:scale(.98)}
 .draw-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
 .draw-btn::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,.15),transparent);transform:rotate(45deg);animation:shimmer 2s infinite}
 @keyframes shimmer{0%{transform:rotate(45deg) translateX(-200%)}100%{transform:rotate(45deg) translateX(200%)}}
-.set-selector-draw{display:flex;gap:12px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.set-selector-draw{display:flex;gap:12px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
 .set-pick-btn{padding:12px 24px;border-radius:12px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:#ccc;cursor:pointer;font-size:.95em;transition:all .25s;min-width:140px}
 .set-pick-btn:hover{border-color:rgba(255,215,0,.3);color:#fff}
 .set-pick-btn.active{border-color:#ffd700;background:rgba(255,215,0,.12);color:#ffd700}
 
-/* ===== 抽卡結果 ===== */
-.draw-result{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;padding:20px 0;min-height:200px}
-.drawn-card{width:160px;height:220px;perspective:800px;cursor:pointer}
-.drawn-card-inner{width:100%;height:100%;position:relative;transition:transform .6s;transform-style:preserve-3d}
-.drawn-card.flipped .drawn-card-inner{transform:rotateY(180deg)}
-.drawn-card-front,.drawn-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;text-align:center}
-.drawn-card-front{background:linear-gradient(135deg,#1a1a4e,#2d1b69);border:2px solid rgba(255,215,0,.4);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.drawn-card-front .q{font-size:2.5em;color:#ffd700}
-.drawn-card-front .flip-hint{font-size:.75em;color:#888;margin-top:10px}
-.drawn-card-back{transform:rotateY(180deg);border:2px solid}
-.drawn-card-back.opportunity{background:linear-gradient(135deg,rgba(46,213,115,.15),rgba(0,0,0,.4));border-color:rgba(46,213,115,.5)}
-.drawn-card-back.destiny{background:linear-gradient(135deg,rgba(255,71,87,.15),rgba(0,0,0,.4));border-color:rgba(255,71,87,.5)}
-.drawn-card-back .back-badge{padding:3px 14px;border-radius:20px;font-size:.75em;font-weight:bold;margin-bottom:8px}
-.drawn-card-back.opportunity .back-badge{background:rgba(46,213,115,.2);color:#2ed573}
-.drawn-card-back.destiny .back-badge{background:rgba(255,71,87,.2);color:#ff4757}
-.drawn-card-back .back-title{font-size:1em;font-weight:bold;margin-bottom:6px;line-height:1.3}
-.drawn-card-back .back-desc{font-size:.78em;color:#ccc;line-height:1.4;overflow:hidden;flex:1}
-@keyframes flipIn{0%{opacity:0;transform:rotateY(0) scale(.5) translateY(60px)}60%{transform:rotateY(0) scale(1.05) translateY(-10px)}100%{opacity:1;transform:rotateY(0) scale(1) translateY(0)}}
-.drawn-card{opacity:0;animation:flipIn .5s ease forwards}
-.drawn-card:nth-child(1){animation-delay:.1s}.drawn-card:nth-child(2){animation-delay:.25s}.drawn-card:nth-child(3){animation-delay:.4s}
-.drawn-card:nth-child(4){animation-delay:.55s}.drawn-card:nth-child(5){animation-delay:.7s}.drawn-card:nth-child(6){animation-delay:.85s}
-.drawn-card:nth-child(7){animation-delay:1s}.drawn-card:nth-child(8){animation-delay:1.15s}.drawn-card:nth-child(9){animation-delay:1.3s}
-.drawn-card:nth-child(10){animation-delay:1.45s}.drawn-card:nth-child(11){animation-delay:1.6s}.drawn-card:nth-child(12){animation-delay:1.75s}
-.drawn-card:nth-child(13){animation-delay:1.9s}.drawn-card:nth-child(14){animation-delay:2.05s}.drawn-card:nth-child(15){animation-delay:2.2s}
-.drawn-card:nth-child(16){animation-delay:2.35s}.drawn-card:nth-child(17){animation-delay:2.5s}.drawn-card:nth-child(18){animation-delay:2.65s}
-.drawn-card:nth-child(19){animation-delay:2.8s}.drawn-card:nth-child(20){animation-delay:2.95s}
-.reveal-all-btn{margin-top:20px;padding:10px 30px;border-radius:30px;border:1px solid rgba(255,215,0,.4);background:rgba(255,215,0,.1);color:#ffd700;cursor:pointer;font-size:.9em;transition:all .3s}
+/* ===== 圓圈抽卡區 ===== */
+.circle-area{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;align-items:center;padding:30px 0;min-height:300px}
+.circle-card{width:110px;height:110px;border-radius:50%;cursor:pointer;perspective:600px;transition:transform .2s}
+.circle-card:hover{transform:scale(1.08)}
+.circle-inner{width:100%;height:100%;position:relative;transition:transform .6s;transform-style:preserve-3d}
+.circle-card.flipped .circle-inner{transform:rotateY(180deg)}
+.circle-front,.circle-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.circle-front{background:radial-gradient(circle at 35% 35%,#3a2a8a,#1a1a4e);border:3px solid rgba(255,215,0,.5);box-shadow:0 0 25px rgba(255,215,0,.2),inset 0 0 20px rgba(0,0,0,.3)}
+.circle-front .q{font-size:2em;color:#ffd700}
+.circle-front .hint{font-size:.65em;color:#888;margin-top:4px}
+.circle-back{transform:rotateY(180deg);border:3px solid;padding:10px}
+.circle-back.opportunity{background:radial-gradient(circle at 35% 35%,#1a4a2e,#0a2e1a);border-color:rgba(46,213,115,.6)}
+.circle-back.destiny{background:radial-gradient(circle at 35% 35%,#4a1a1a,#2e0a0a);border-color:rgba(255,71,87,.6)}
+.circle-back .cbadge{padding:2px 10px;border-radius:12px;font-size:.6em;font-weight:bold;margin-bottom:4px}
+.circle-back.opportunity .cbadge{background:rgba(46,213,115,.2);color:#2ed573}
+.circle-back.destiny .cbadge{background:rgba(255,71,87,.2);color:#ff4757}
+.circle-back .ctitle{font-size:.82em;font-weight:bold;line-height:1.2;margin-bottom:2px}
+.circle-back .cdesc{font-size:.6em;color:#bbb;line-height:1.2;overflow:hidden;max-height:36px}
+
+@keyframes circlePop{0%{opacity:0;transform:scale(0)}70%{transform:scale(1.1)}100%{opacity:1;transform:scale(1)}}
+.circle-card{opacity:0;animation:circlePop .4s ease forwards}
+
+.reveal-all-btn{margin-top:10px;padding:10px 30px;border-radius:30px;border:1px solid rgba(255,215,0,.4);background:rgba(255,215,0,.1);color:#ffd700;cursor:pointer;font-size:.9em;transition:all .3s}
 .reveal-all-btn:hover{background:rgba(255,215,0,.2)}
+.draw-again-btn{margin-top:10px;padding:10px 30px;border-radius:30px;background:linear-gradient(135deg,#5f27cd,#341f97);color:#fff;border:none;cursor:pointer;font-size:.9em;font-weight:bold;transition:all .3s}
+.draw-again-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(95,39,205,.4)}
+.draw-bottom-btns{display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap}
 
 /* ===== 導航 ===== */
 nav{display:flex;justify-content:center;gap:12px;margin-bottom:30px;flex-wrap:wrap}
@@ -126,11 +122,14 @@ nav button.active{background:rgba(255,215,0,.15);border-color:rgba(255,215,0,.4)
 @media(max-width:600px){
   h1{font-size:1.7em}
   .card-grid,.set-list{grid-template-columns:1fr}
-  .drawn-card{width:130px;height:180px}
+  .circle-card{width:85px;height:85px}
+  .circle-front .q{font-size:1.5em}
+  .circle-back .ctitle{font-size:.7em}
+  .circle-back .cdesc{font-size:.55em}
   .form-row{flex-direction:column;align-items:stretch}
   .form-row label{min-width:auto}
-  .count-btn{width:50px;height:50px;font-size:1.1em}
-  .draw-btn{padding:14px 40px;font-size:1.1em}
+  .count-btn{width:48px;height:48px;font-size:1.1em}
+  .draw-btn{padding:12px 36px;font-size:1.1em}
   .set-pick-btn{min-width:100px;padding:10px 16px;font-size:.85em}
 }
 </style>
@@ -148,8 +147,6 @@ nav button.active{background:rgba(255,215,0,.15);border-color:rgba(255,215,0,.4)
 <div class="page active" id="page-sets">
   <h1>機會與命運</h1>
   <p class="subtitle">選擇一個卡片組，或建立你自己的</p>
-
-  <!-- 新增卡片組 -->
   <div class="card-form">
     <h3 style="margin-bottom:16px;color:#ffd700">新增卡片組</h3>
     <div class="form-row">
@@ -160,10 +157,7 @@ nav button.active{background:rgba(255,215,0,.15);border-color:rgba(255,215,0,.4)
       <button class="btn btn-primary" onclick="createSet()">建立卡片組</button>
     </div>
   </div>
-
-  <div class="card-list-header">
-    <h2>所有卡片組</h2>
-  </div>
+  <div class="card-list-header"><h2>所有卡片組</h2></div>
   <div id="set-list" class="set-list"></div>
   <div id="set-empty" class="card-empty">還沒有任何卡片組</div>
 </div>
@@ -172,16 +166,12 @@ nav button.active{background:rgba(255,215,0,.15);border-color:rgba(255,215,0,.4)
 <div class="page" id="page-edit">
   <h1>編輯卡片組</h1>
   <div class="breadcrumb"><a onclick="showPage('sets')">← 回到卡片組列表</a></div>
-
   <div class="card-form">
     <h3 style="margin-bottom:6px;color:#ffd700" id="editing-set-name"></h3>
     <p style="color:#888;font-size:.85em;margin-bottom:16px" id="editing-set-count"></p>
     <div class="form-row">
       <label>類型</label>
-      <select id="input-type">
-        <option value="opportunity">機會</option>
-        <option value="destiny">命運</option>
-      </select>
+      <select id="input-type"><option value="opportunity">機會</option><option value="destiny">命運</option></select>
     </div>
     <div class="form-row">
       <label>標題</label>
@@ -195,7 +185,6 @@ nav button.active{background:rgba(255,215,0,.15);border-color:rgba(255,215,0,.4)
       <button class="btn btn-primary" onclick="saveCard()">新增卡片</button>
     </div>
   </div>
-
   <div class="card-list-header">
     <h2>卡片列表</h2>
     <div class="stats">
@@ -213,18 +202,20 @@ nav button.active{background:rgba(255,215,0,.15);border-color:rgba(255,215,0,.4)
   <h1>機會與命運</h1>
   <p class="subtitle">選擇卡片組，翻開你的命運</p>
 
-  <div class="draw-controls">
+  <div class="draw-controls" id="draw-controls">
     <h2>選擇卡片組</h2>
     <div class="set-selector-draw" id="set-selector-draw"></div>
-
-    <h2 style="margin-top:10px">選擇抽卡數量</h2>
+    <h2 style="margin-top:8px">選擇抽卡數量</h2>
     <div class="count-selector" id="count-selector"></div>
     <button class="draw-btn" id="draw-btn" onclick="startDraw()">抽 卡</button>
-    <p style="margin-top:12px;color:#888;font-size:.85em" id="draw-hint"></p>
+    <p style="margin-top:10px;color:#888;font-size:.85em" id="draw-hint"></p>
   </div>
 
-  <div class="draw-result" id="draw-result"></div>
-  <div style="text-align:center;display:none" id="reveal-area"></div>
+  <div class="circle-area" id="circle-area" style="display:none"></div>
+  <div class="draw-bottom-btns" id="draw-bottom-btns" style="display:none">
+    <button class="reveal-all-btn" onclick="revealAll()">全部翻開</button>
+    <button class="draw-again-btn" onclick="resetDraw()">再來一次</button>
+  </div>
 </div>
 
 </div>
@@ -235,10 +226,7 @@ nav button.active{background:rgba(255,215,0,.15);border-color:rgba(255,215,0,.4)
     <h3>編輯卡片</h3>
     <div class="form-row">
       <label>類型</label>
-      <select id="edit-type">
-        <option value="opportunity">機會</option>
-        <option value="destiny">命運</option>
-      </select>
+      <select id="edit-type"><option value="opportunity">機會</option><option value="destiny">命運</option></select>
     </div>
     <div class="form-row">
       <label>標題</label>
@@ -258,183 +246,149 @@ nav button.active{background:rgba(255,215,0,.15);border-color:rgba(255,215,0,.4)
 <div class="particles" id="particles"></div>
 
 <script>
-// ===== 預設搞笑聚會組 =====
 const PRESET_SETS = [
   {
-    id: '_preset_party',
-    name: '搞笑聚會版',
-    preset: true,
-    cards: [
-      { id:'p1', type:'destiny', title:'学貓叫', desc:'在大家面前學貓叫三聲，不能笑場' },
-      { id:'p2', type:'opportunity', title:'啤酒一杯', desc:'獲得在場一位朋友請的啤酒' },
-      { id:'p3', type:'destiny', title:'真心話', desc:'被問一個你最不想回答的問題，必須老實回答' },
-      { id:'p4', type:'opportunity', title:'免死金牌', desc:'本次聚會可免一次懲罰' },
-      { id:'p5', type:'destiny', title:'跳舞時間', desc:'站起來跳30秒舞，大家投票決定過不過關' },
-      { id:'p6', type:'opportunity', title:'神秘禮物', desc:'可以跟在場任何人索取一樣東西' },
-      { id:'p7', type:'destiny', title:'模仿秀', desc:'模仿一位在場的朋友，让大家猜是誰' },
-      { id:'p8', type:'opportunity', title:'點歌權', desc:'可以指定一位朋友唱一首歌' },
-      { id:'p9', type:'destiny', title:'告白時間', desc:'對在場一位朋友說三句肉麻的話' },
-      { id:'p10', type:'opportunity', title:'翻倍卡', desc:'下次抽到獎勵翻倍執行' }
+    id:'_preset_party', name:'搞笑聚會版', preset:true,
+    cards:[
+      {id:'p1',type:'destiny',title:'學貓叫',desc:'在大家面前學貓叫三聲，不能笑場'},
+      {id:'p2',type:'opportunity',title:'啤酒一杯',desc:'獲得在場一位朋友請的啤酒'},
+      {id:'p3',type:'destiny',title:'真心話',desc:'被問一個你最不想回答的問題，必須老實回答'},
+      {id:'p4',type:'opportunity',title:'免死金牌',desc:'本次聚會可免一次懲罰'},
+      {id:'p5',type:'destiny',title:'跳舞時間',desc:'站起來跳30秒舞，大家投票決定過不過關'},
+      {id:'p6',type:'opportunity',title:'神秘禮物',desc:'可以跟在場任何人索取一樣東西'},
+      {id:'p7',type:'destiny',title:'模仿秀',desc:'模仿一位在場的朋友，讓大家猜是誰'},
+      {id:'p8',type:'opportunity',title:'點歌權',desc:'可以指定一位朋友唱一首歌'},
+      {id:'p9',type:'destiny',title:'告白時間',desc:'對在場一位朋友說三句肉麻的話'},
+      {id:'p10',type:'opportunity',title:'翻倍卡',desc:'下次抽到獎勵翻倍執行'}
     ]
   }
 ];
 
-// ===== 資料管理 =====
 let sets = JSON.parse(localStorage.getItem('luck_sets') || 'null');
-if (!sets) {
-  sets = JSON.parse(JSON.stringify(PRESET_SETS));
-  saveSets();
-}
-let editingSetId = null;
-let editingCardId = null;
+if (!sets) { sets = JSON.parse(JSON.stringify(PRESET_SETS)); saveSets(); }
+let editingSetId = null, editingCardId = null;
+let drawSetId = null, _selectedCount = 0;
 
 function saveSets() { localStorage.setItem('luck_sets', JSON.stringify(sets)); }
 function genId() { return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
 function escHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
-// ===== 頁面切換 =====
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.getElementById('page-' + name).classList.add('active');
   document.querySelectorAll('nav button').forEach(b => {
-    if ((name === 'sets' || name === 'edit') && b.textContent.includes('管理')) b.classList.add('active');
-    if (name === 'draw' && b.textContent.includes('抽卡')) b.classList.add('active');
+    if ((name==='sets'||name==='edit') && b.textContent.includes('管理')) b.classList.add('active');
+    if (name==='draw' && b.textContent.includes('抽卡')) b.classList.add('active');
   });
-  if (name === 'sets') renderSetList();
-  if (name === 'draw') renderDrawPage();
-  if (name === 'edit') renderEditPage();
+  if (name==='sets') renderSetList();
+  if (name==='draw') renderDrawPage();
+  if (name==='edit') renderEditPage();
 }
 
-// ===== 卡片組 CRUD =====
+// ===== 卡片組管理 =====
 function createSet() {
   const name = document.getElementById('input-setname').value.trim();
   if (!name) { alert('請輸入卡片組名稱'); return; }
-  sets.push({ id: genId(), name, preset: false, cards: [] });
+  sets.push({ id:genId(), name, preset:false, cards:[] });
   saveSets();
   document.getElementById('input-setname').value = '';
   renderSetList();
 }
-
 function deleteSet(id) {
-  const s = sets.find(x => x.id === id);
-  if (!s) return;
+  const s = sets.find(x=>x.id===id); if(!s) return;
   if (!confirm(`確定要刪除「${s.name}」嗎？`)) return;
-  sets = sets.filter(x => x.id !== id);
-  saveSets();
-  renderSetList();
+  sets = sets.filter(x=>x.id!==id); saveSets(); renderSetList();
 }
-
-function enterSet(id) {
-  editingSetId = id;
-  showPage('edit');
-}
+function enterSet(id) { editingSetId = id; showPage('edit'); }
 
 function renderSetList() {
   const list = document.getElementById('set-list');
   const empty = document.getElementById('set-empty');
-  if (sets.length === 0) { list.innerHTML = ''; empty.style.display = 'block'; return; }
-  empty.style.display = 'none';
+  if (sets.length===0) { list.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display='none';
   list.innerHTML = sets.map(s => {
-    const opp = s.cards.filter(c => c.type === 'opportunity').length;
-    const dest = s.cards.length - opp;
-    return `
-    <div class="set-item">
+    const opp = s.cards.filter(c=>c.type==='opportunity').length;
+    return `<div class="set-item">
       <div class="set-name">${escHtml(s.name)}</div>
-      <div class="set-info">${s.cards.length} 張卡片（機會 ${opp} / 命運 ${dest}）</div>
-      <div class="set-tags">
-        <span class="set-tag ${s.preset ? 'preset' : 'custom'}">${s.preset ? '預設' : '自選組'}</span>
-      </div>
+      <div class="set-info">${s.cards.length} 張卡片（機會 ${opp} / 命運 ${s.cards.length-opp}）</div>
+      <div class="set-tags"><span class="set-tag ${s.preset?'preset':'custom'}">${s.preset?'預設':'自選組'}</span></div>
       <div class="set-actions">
         <button class="btn btn-primary btn-sm" onclick="enterSet('${s.id}')">編輯卡片</button>
-        ${s.preset ? '' : `<button class="btn btn-danger btn-sm" onclick="deleteSet('${s.id}')">刪除</button>`}
+        ${s.preset?'':`<button class="btn btn-danger btn-sm" onclick="deleteSet('${s.id}')">刪除</button>`}
       </div>
     </div>`;
   }).join('');
 }
 
-// ===== 卡片編輯頁 =====
+// ===== 卡片編輯 =====
 function renderEditPage() {
-  const s = sets.find(x => x.id === editingSetId);
+  const s = sets.find(x=>x.id===editingSetId);
   if (!s) { showPage('sets'); return; }
   document.getElementById('editing-set-name').textContent = s.name;
-  const opp = s.cards.filter(c => c.type === 'opportunity').length;
+  const opp = s.cards.filter(c=>c.type==='opportunity').length;
   document.getElementById('editing-set-count').textContent = `共 ${s.cards.length} 張卡片`;
   document.getElementById('count-opp').textContent = opp;
   document.getElementById('count-dest').textContent = s.cards.length - opp;
   document.getElementById('count-total').textContent = s.cards.length;
-
   const grid = document.getElementById('card-grid');
   const empty = document.getElementById('card-empty');
-  if (s.cards.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
-  empty.style.display = 'none';
-  grid.innerHTML = s.cards.map(c => `
-    <div class="card-item">
-      <span class="type-badge ${c.type}">${c.type === 'opportunity' ? '機會' : '命運'}</span>
-      <div class="card-title">${escHtml(c.title)}</div>
-      <div class="card-desc">${escHtml(c.desc || '—')}</div>
-      <div class="card-actions">
-        <button class="btn btn-info btn-sm" onclick="editCard('${c.id}')">編輯</button>
-        <button class="btn btn-danger btn-sm" onclick="deleteCard('${c.id}')">刪除</button>
-      </div>
+  if (s.cards.length===0) { grid.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display='none';
+  grid.innerHTML = s.cards.map(c => `<div class="card-item">
+    <span class="type-badge ${c.type}">${c.type==='opportunity'?'機會':'命運'}</span>
+    <div class="card-title">${escHtml(c.title)}</div>
+    <div class="card-desc">${escHtml(c.desc||'—')}</div>
+    <div class="card-actions">
+      <button class="btn btn-info btn-sm" onclick="editCard('${c.id}')">編輯</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteCard('${c.id}')">刪除</button>
     </div>
-  `).join('');
+  </div>`).join('');
 }
-
 function saveCard() {
-  const s = sets.find(x => x.id === editingSetId);
-  if (!s) return;
+  const s = sets.find(x=>x.id===editingSetId); if(!s) return;
   const type = document.getElementById('input-type').value;
   const title = document.getElementById('input-title').value.trim();
   const desc = document.getElementById('input-desc').value.trim();
   if (!title) { alert('請輸入卡片標題'); return; }
-  s.cards.push({ id: genId(), type, title, desc });
-  saveSets();
-  document.getElementById('input-title').value = '';
-  document.getElementById('input-desc').value = '';
+  s.cards.push({ id:genId(), type, title, desc }); saveSets();
+  document.getElementById('input-title').value='';
+  document.getElementById('input-desc').value='';
   renderEditPage();
 }
-
 function editCard(id) {
-  const s = sets.find(x => x.id === editingSetId);
-  const card = s?.cards.find(c => c.id === id);
-  if (!card) return;
+  const s = sets.find(x=>x.id===editingSetId);
+  const card = s?.cards.find(c=>c.id===id); if(!card) return;
   document.getElementById('edit-type').value = card.type;
   document.getElementById('edit-title').value = card.title;
-  document.getElementById('edit-desc').value = card.desc || '';
+  document.getElementById('edit-desc').value = card.desc||'';
   editingCardId = id;
   document.getElementById('edit-modal').classList.add('show');
 }
-
 function confirmEdit() {
-  const s = sets.find(x => x.id === editingSetId);
-  const card = s?.cards.find(c => c.id === editingCardId);
-  if (!card) return;
+  const s = sets.find(x=>x.id===editingSetId);
+  const card = s?.cards.find(c=>c.id===editingCardId); if(!card) return;
   card.type = document.getElementById('edit-type').value;
   card.title = document.getElementById('edit-title').value.trim();
   card.desc = document.getElementById('edit-desc').value.trim();
   if (!card.title) { alert('標題不能為空'); return; }
-  saveSets();
-  closeModal();
-  renderEditPage();
+  saveSets(); closeModal(); renderEditPage();
 }
-
-function closeModal() { document.getElementById('edit-modal').classList.remove('show'); editingCardId = null; }
-
+function closeModal() { document.getElementById('edit-modal').classList.remove('show'); editingCardId=null; }
 function deleteCard(id) {
   if (!confirm('確定要刪除這張卡片嗎？')) return;
-  const s = sets.find(x => x.id === editingSetId);
-  if (!s) return;
-  s.cards = s.cards.filter(c => c.id !== id);
-  saveSets();
-  renderEditPage();
+  const s = sets.find(x=>x.id===editingSetId); if(!s) return;
+  s.cards = s.cards.filter(c=>c.id!==id); saveSets(); renderEditPage();
 }
 
 // ===== 抽卡頁 =====
-let drawSetId = null;
-let _selectedCount = 0;
-
 function renderDrawPage() {
+  // 重置狀態
+  document.getElementById('draw-controls').style.display = '';
+  document.getElementById('circle-area').style.display = 'none';
+  document.getElementById('circle-area').innerHTML = '';
+  document.getElementById('draw-bottom-btns').style.display = 'none';
+
   const sel = document.getElementById('set-selector-draw');
   const usable = sets.filter(s => s.cards.length >= 1);
   if (usable.length === 0) {
@@ -445,53 +399,43 @@ function renderDrawPage() {
     return;
   }
   sel.innerHTML = usable.map(s => `
-    <button class="set-pick-btn ${drawSetId === s.id ? 'active' : ''}" onclick="pickSet('${s.id}',this)">
+    <button class="set-pick-btn ${drawSetId===s.id?'active':''}" onclick="pickSet('${s.id}',this)">
       ${escHtml(s.name)}<br><span style="font-size:.8em;color:#888">${s.cards.length} 張</span>
     </button>
   `).join('');
-
   if (drawSetId) {
-    const s = sets.find(x => x.id === drawSetId);
-    if (s) renderCountSelector(s.cards.length);
-    else resetDrawUI();
-  } else {
-    resetDrawUI();
-  }
+    const s = sets.find(x=>x.id===drawSetId);
+    if (s) renderCountSelector(s.cards.length); else resetCountUI();
+  } else resetCountUI();
 }
 
-function resetDrawUI() {
-  document.getElementById('count-selector').innerHTML = '';
-  document.getElementById('draw-hint').textContent = '請先選擇一個卡片組';
-  document.getElementById('draw-btn').disabled = true;
-  document.getElementById('draw-result').innerHTML = '';
-  document.getElementById('reveal-area').style.display = 'none';
-  _selectedCount = 0;
+function resetCountUI() {
+  document.getElementById('count-selector').innerHTML='';
+  document.getElementById('draw-hint').textContent='請先選擇一個卡片組';
+  document.getElementById('draw-btn').disabled=true;
+  _selectedCount=0;
 }
 
 function pickSet(id, el) {
   drawSetId = id;
-  document.querySelectorAll('.set-pick-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.set-pick-btn').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
-  const s = sets.find(x => x.id === id);
+  const s = sets.find(x=>x.id===id);
   if (s) renderCountSelector(s.cards.length);
 }
 
 function renderCountSelector(max) {
   const sel = document.getElementById('count-selector');
-  const counts = [3, 5, 10, 20];
-  sel.innerHTML = counts.map(n => {
-    const dis = n > max ? 'disabled' : '';
-    return `<button class="count-btn" onclick="pickCount(${n},this)" ${dis}>${n}</button>`;
-  }).join('');
-  document.getElementById('draw-hint').textContent = max < 3 ? `此組只有 ${max} 張卡片` : `共 ${max} 張卡片可抽`;
-  document.getElementById('draw-btn').disabled = max < 3;
-  document.getElementById('draw-result').innerHTML = '';
-  document.getElementById('reveal-area').style.display = 'none';
-  _selectedCount = 0;
+  sel.innerHTML = [3,5,10,20].map(n =>
+    `<button class="count-btn" onclick="pickCount(${n},this)" ${n>max?'disabled':''}>${n}</button>`
+  ).join('');
+  document.getElementById('draw-hint').textContent = max<3?`此組只有 ${max} 張卡片`:`共 ${max} 張卡片可抽`;
+  document.getElementById('draw-btn').disabled = max<3;
+  _selectedCount=0;
 }
 
 function pickCount(n, el) {
-  document.querySelectorAll('.count-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.count-btn').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   _selectedCount = n;
 }
@@ -499,60 +443,74 @@ function pickCount(n, el) {
 function startDraw() {
   if (!drawSetId) { alert('請先選擇卡片組'); return; }
   if (!_selectedCount) { alert('請先選擇抽卡數量'); return; }
-  const s = sets.find(x => x.id === drawSetId);
-  if (!s) return;
+  const s = sets.find(x=>x.id===drawSetId); if(!s) return;
   if (_selectedCount > s.cards.length) { alert(`卡片不足，此組只有 ${s.cards.length} 張`); return; }
 
-  const shuffled = [...s.cards].sort(() => Math.random() - 0.5);
+  const shuffled = [...s.cards].sort(()=>Math.random()-0.5);
   const drawn = shuffled.slice(0, _selectedCount);
 
-  const result = document.getElementById('draw-result');
-  result.innerHTML = drawn.map((c, i) => `
-    <div class="drawn-card" onclick="flipCard(this)">
-      <div class="drawn-card-inner">
-        <div class="drawn-card-front">
+  // 隱藏控制區，顯示圓圈
+  document.getElementById('draw-controls').style.display = 'none';
+  const area = document.getElementById('circle-area');
+  area.style.display = 'flex';
+  document.getElementById('draw-bottom-btns').style.display = 'flex';
+
+  area.innerHTML = drawn.map((c,i) => `
+    <div class="circle-card" onclick="flipCircle(this)" style="animation-delay:${i*0.08}s">
+      <div class="circle-inner">
+        <div class="circle-front">
           <div class="q">?</div>
-          <div class="flip-hint">點擊翻開</div>
+          <div class="hint">點我</div>
         </div>
-        <div class="drawn-card-back ${c.type}">
-          <div class="back-badge">${c.type === 'opportunity' ? '機會' : '命運'}</div>
-          <div class="back-title">${escHtml(c.title)}</div>
-          <div class="back-desc">${escHtml(c.desc || '')}</div>
+        <div class="circle-back ${c.type}">
+          <div class="cbadge">${c.type==='opportunity'?'機會':'命運'}</div>
+          <div class="ctitle">${escHtml(c.title)}</div>
+          <div class="cdesc">${escHtml(c.desc||'')}</div>
         </div>
       </div>
     </div>
   `).join('');
 
-  document.getElementById('reveal-area').style.display = 'block';
-  document.getElementById('reveal-area').innerHTML = `<button class="reveal-all-btn" onclick="revealAll()">全部翻開</button>`;
   spawnParticles();
 }
 
-function flipCard(el) { if (!el.classList.contains('flipped')) el.classList.add('flipped'); }
-function revealAll() { document.querySelectorAll('.drawn-card').forEach(c => c.classList.add('flipped')); }
+function flipCircle(el) {
+  if (el.classList.contains('flipped')) return;
+  el.classList.add('flipped');
+}
+
+function revealAll() {
+  document.querySelectorAll('.circle-card').forEach(c => c.classList.add('flipped'));
+}
+
+function resetDraw() {
+  drawSetId = null;
+  _selectedCount = 0;
+  renderDrawPage();
+}
 
 // ===== 粒子 =====
 function spawnParticles() {
   const container = document.getElementById('particles');
   const colors = ['#ffd700','#ff6b35','#2ed573','#ff4757','#5f27cd','#fff'];
-  for (let i = 0; i < 40; i++) {
+  for (let i=0; i<40; i++) {
     const p = document.createElement('div');
     p.className = 'particle';
-    const size = Math.random() * 8 + 4;
-    p.style.width = size + 'px'; p.style.height = size + 'px';
-    p.style.background = colors[Math.floor(Math.random() * colors.length)];
-    p.style.left = (Math.random() * 100) + 'vw';
-    p.style.top = (Math.random() * 60 + 20) + 'vh';
-    p.style.setProperty('--tx', (Math.random() * 200 - 100) + 'px');
-    p.style.setProperty('--ty', (Math.random() * -300 - 50) + 'px');
+    const size = Math.random()*8+4;
+    p.style.width=size+'px'; p.style.height=size+'px';
+    p.style.background=colors[Math.floor(Math.random()*colors.length)];
+    p.style.left=(Math.random()*100)+'vw';
+    p.style.top=(Math.random()*60+20)+'vh';
+    p.style.setProperty('--tx',(Math.random()*200-100)+'px');
+    p.style.setProperty('--ty',(Math.random()*-300-50)+'px');
     container.appendChild(p);
-    setTimeout(() => p.remove(), 1600);
+    setTimeout(()=>p.remove(),1600);
   }
 }
 
 // ===== 初始化 =====
 renderSetList();
-document.getElementById('edit-modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+document.getElementById('edit-modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
 </script>
 </body>
 </html>
